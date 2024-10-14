@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personaliza tu Auto a Escala</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="barra-header">
+        <h1>Personaliza tu Auto a Escala</h1>
+    </div>
+
+    <!-- Botón de inicio -->
+    <div id="start-screen">
+        <button onclick="startCustomization()">Empezar</button>
+    </div>
+
+    <!-- Paso 1: Selección del modelo -->
+    <div id="step1" class="step">
+        <h2>Selecciona el Modelo de Auto</h2>
+        <div class="image-option" onclick="selectModel('Minibús Toyota')">
+            <img src="https://res.cloudinary.com/toyosa-sa/production/plataforma-toyota/backend/images/toyota/hiace/colores/blanco.png" alt="Minibús Toyota">
+            <div class="barra-header">
+            <p>Minibús Toyota</p>
+        </div>
+        </div>
+        <div class="image-option" onclick="selectModel('Toyota Corolla (1990-2005)')">
+            <img src="https://111kuroyanagi1.wordpress.com/wp-content/uploads/2013/08/2000-toyota-corolla-van-ee103v-at-ac-ps-1-5-dx-for-sale-in-japan-82k.png" alt="Toyota Corolla">
+            <div class="barra-header">
+            <p>Toyota Corolla (1990-2005)</p>
+        </div>
+        </div>
+        <div class="image-option" onclick="selectModel('Microbús Dodge EMPA')">
+            <img src="https://t3.ftcdn.net/jpg/05/40/85/18/360_F_540851835_D6pCxj2DMWwQML2kRvHW7ZCj9XcHYK10.jpg" alt="Microbús Dodge EMPA">
+            <div class="barra-header">
+            <p>Microbús Dodge EMPA</p>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Paso 2: Selección del material -->
+    <div id="step2" class="step">
+        <h2>Selecciona el Material</h2>
+        <div class="image-option" onclick="selectMaterial('Cartón - 2 Bs')">
+            <img src="https://images.vexels.com/content/264723/preview/cartoon-paperboard-box-ec33fa.png" alt="Cartón">
+            <div class="barra-header">
+                <p>Cartón - 2 Bs</p>
+            </div>
+            
+        </div>
+        <div class="image-option" onclick="selectMaterial('Papel Kraft - 3 Bs')">
+            <img src="https://comsucre.com.ec/wp-content/uploads/2023/10/LM-TW-00.png" alt="Papel Kraft">
+            <div class="barra-header">
+            <p>Papel Kraft - 3 Bs</p>
+        </div>
+        </div>
+        <div class="image-option" onclick="selectMaterial('Lata de Aluminio - 11 Bs')">
+            <img src="https://cdn-icons-png.flaticon.com/512/455/455389.png" alt="Lata de Aluminio">
+            <div class="barra-header">
+            <p>Lata de Aluminio - 11 Bs</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- Paso 3: Personalización -->
+    <div id="step3" class="step">
+        <h2>¿Quieres personalizar tu auto?</h2>
+        <button onclick="selectPersonalization('si')">Sí</button>
+        <button onclick="selectPersonalization('no')">No</button>
+        <div id="upload-image" class="hidden">
+            <h3>Sube tu imagen para personalizar el auto</h3>
+            <input type="file" id="imagen-personalizacion">
+            <button onclick="skipUpload()">No tengo archivo</button>
+        </div>
+    </div>
+
+    <!-- Paso 4: Motorización -->
+    <div id="step4" class="step">
+        <h2>¿Quieres que tu auto tenga motor (Bluetooth)?</h2>
+        <button onclick="selectMotor('si')">Sí</button>
+        <button onclick="selectMotor('no')">No</button>
+    </div>
+
+    <!-- Paso 5: Mostrar precio total -->
+    <div id="step5" class="step">
+        <h3>Precio Total: <span id="precio-total">0 Bs</span></h3>
+        <button onclick="addOrder()">Añadir al Pedido</button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
